@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>Utilisateur connecté: {{ prenom }} {{ nom }}</p><br><br>
+  <h5>Utilisateurs actifs :</h5>
+  <div *ngFor="let user of users">
+    <ion-list>
+      <ion-item >
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        {{user.prenom }} {{user.nom}}
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-menu contentId="main-content" side="start"> 
+  <ion-header> 
+      <ion-toolbar translucent> 
+        <ion-title>Menu</ion-title>
+      </ion-toolbar> 
+    </ion-header>
+    <ion-content>
+      <ion-list> 
+        <ion-item [routerLink]="['/profil']">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          Profil
+          <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item [routerLink]="['/search']">
+          <ion-icon name="search-outline" slot="start"></ion-icon>
+          Recherche
+          <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="log-out-outline" (click)="logOut()" slot="start"></ion-icon>
+          Déconnexion
+        </ion-item>
+      </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-router-outlet id="main-content"> 
+</ion-router-outlet> 

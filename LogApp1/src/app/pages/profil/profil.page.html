@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h5>Votre profil</h5>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      {{ prenom }} {{ nom }}
+    </ion-item>
+
+    <ion-item>
+    <ion-icon name="mail-outline" slot="start"></ion-icon>
+      {{ email }}
+    </ion-item>
+
+    <ion-item>
+    <ion-icon name="call-outline" slot="start"></ion-icon>
+      {{ telephone }}
+    </ion-item>
+
+  </ion-list><br><br>
+
+  <a [routerLink]="['/resert']" class="small-text">Modifier le mot de passe</a>
+</ion-content>

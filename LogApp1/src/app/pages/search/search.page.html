@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="term" shape="round"></ion-searchbar>
+
+  <div *ngFor="let user of users |filter:term">
+    <ion-list>
+      <ion-item >
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        {{user.prenom }} {{user.nom}}
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
